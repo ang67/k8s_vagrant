@@ -131,13 +131,31 @@ Your cluster is accessible from the host. To manage it using `kubectl` on your h
     ```
 
    > Replace `/path/to/config` with the actual path to the `admin.conf` file you copied.
-    ```shell
-    $ kubectl get nodes
-      NAME          STATUS   ROLES           AGE   VERSION
-      k8s-master    Ready    control-plane   20m   v1.31.3
-      k8s-worker1   Ready    <none>          12m   v1.31.3
-      k8s-worker2   Ready    <none>          11m   v1.31.3
-    ```
+  ```shell
+   $ kubectl get nodes
+     NAME          STATUS   ROLES           AGE   VERSION
+     k8s-master    Ready    control-plane   20m   v1.31.3
+     k8s-worker1   Ready    <none>          12m   v1.31.3
+     k8s-worker2   Ready    <none>          11m   v1.31.3
+  ```
 ---
 
 Happy Kuberneting! 🐳🎉
+
+---
+
+## Clean-Up Steps 🧹
+
+### 1. **Destroy the Vagrant Virtual Machines**
+
+To stop and remove the virtual machines created by Vagrant:
+
+```shell
+vagrant destroy -f
+```
+### 2. Remove the Vagrantfile and .vagrant Directory
+To completely clean up Vagrant-related files from your project directory:
+
+```shell
+rm -rf Vagrantfile .vagrant
+```
